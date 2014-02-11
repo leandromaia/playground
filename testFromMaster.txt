@@ -1,1 +1,4 @@
 First line of test from master
+
+Line for test stash
+Line for test stash II
