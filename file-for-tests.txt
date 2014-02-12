@@ -1,8 +1,0 @@
-This was writing in branch for_tests
-
-test new line by Felipe
-Zoio second line.
-
-testing conflit
-test new line by Felipe
-Zoio second line.
