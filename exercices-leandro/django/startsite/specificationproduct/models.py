@@ -1,6 +1,7 @@
 from django.db import models
 
 class FeatureValue(models.Model):
+    name = models.CharField(max_length=10)
     value = models.IntegerField(default=0)
 
 class Product(models.Model):
