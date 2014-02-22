@@ -1,30 +1,34 @@
 from django.contrib import admin
-from specificationproduct.models import Feature, FeatureValue 
+from specificationproduct.models import Feature, FeatureValue
 from specificationproduct.models import Product, ProductSpec
 
-class FeatureInLine(admin.StackedInline):    
+
+class FeatureInLine(admin.StackedInline):
     model = Feature
     extra = 1
 
-class FeatureValueAdmin(admin.ModelAdmin):
-    fieldsets = [        
-        ('Valor', {'fields': ['value']})
+
+class ProductSpecAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {'fields': ['name']})
     ]
     inlines = [FeatureInLine]
-    list_display = ['value']
 
-class ProductSpecInLine(admin.StackedInline):
+
+class FeatureValueInLine(admin.StackedInline):
     fieldsets = [
-        (None, {'fields': ['name','feature']})
+        ('Valor das Features', {'fields': ['value', 'feature']})
     ]
-    model = ProductSpec
-    extra = 1
+    verbose_name_plural = 'Lista de Features Values'
+    model = FeatureValue
+    extra = 2
+
 
 class ProductAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Valores Basicos', {'fields': ['name','price', 'feature_value']})]
-    inlines = [ProductSpecInLine]
-    list_display = ('name', 'price','feature_value')
+        ('Valores Basicos', {'fields': ['name', 'price', 'product_spec']})]
+    inlines = [FeatureValueInLine]
+    list_display = ('name', 'price', 'product_spec')
 
-admin.site.register(FeatureValue, FeatureValueAdmin)
+admin.site.register(ProductSpec, ProductSpecAdmin)
 admin.site.register(Product, ProductAdmin)
