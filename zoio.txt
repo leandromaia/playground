@@ -2,5 +2,9 @@ teste
 nova linha joao
 nova linha zoio
 linha nova
+<<<<<<< HEAD
 
 teste do zoio
+=======
+Rogerio
+>>>>>>> d7a8e70535f71c891941edf0b52a366b8436c98a
