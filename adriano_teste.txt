@@ -1,1 +1,2 @@
 Eu sou Adriano e este é meu primeiro curso de Git
+Alterando o arquivo conter mais de uma linha
