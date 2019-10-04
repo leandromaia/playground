@@ -1,1 +1,3 @@
 Teste de sincronização com comando PUSH e PULL
+
+Nova linha de teste
