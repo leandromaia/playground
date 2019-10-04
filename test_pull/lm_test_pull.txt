@@ -1,0 +1,1 @@
+Teste de sincronização com comando PUSH e PULL
